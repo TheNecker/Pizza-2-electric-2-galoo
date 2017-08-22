@@ -1,0 +1,9 @@
+<p>these your toppings?!</p>
+<% counter = 0 %>
+<form method = "post" action="/confirm">
+<% choices.each do |value| %>
+<p><input type="checkbox" value="<%=value%>"name="confirmed_options + <%=counter.to_s%>"> <%= value %>  </p>
+<%counter += 1%>
+<% end %>
+<input type="submit">
+</form>
