@@ -2,15 +2,22 @@
 <% counter = 0 %>
 <form method = "post" action="/confirm">
 <% crust.each do |value| %>
+<p><input type="checkbox" value="<%=value%>"name="confirmed_options + <%=counter.to_s%>"> <%= value %>  </p>
+<% end %>
 
 <% cheese.each do |value| %>
+<p><input type="checkbox" value="<%=value%>"name="confirmed_options + <%=counter.to_s%>"> <%= value %>  </p>
+<% end %>
 
-<% meat.each do  |value| %>
-
+<% meats.each do  |value| %>
+<p><input type="checkbox" value="<%=value%>"name="confirmed_options + <%=counter.to_s%>"> <%= value %>  </p>
+<% end %>
+>
 <% veggies.each do |value| %>
+<p><input type="checkbox" value="<%=value%>"name="confirmed_options + <%=counter.to_s%>"> <%= value %>  </p>
+<% end %>
 
 <p><input type="checkbox" value="<%=value%>"name="confirmed_options + <%=counter.to_s%>"> <%= value %>  </p>
 <%counter += 1%>
-<% end %>
 <input type="submit">
 </form>
