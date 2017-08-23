@@ -1,7 +1,14 @@
-<p>these your toppings?!</p>
+<p>Ok, so, this is what you want your pizza to be aye?</p>
 <% counter = 0 %>
 <form method = "post" action="/confirm">
-<% choices.each do |value| %>
+<% crust.each do |value| %>
+
+<% cheese.each do |value| %>
+
+<% meat.each do  |value| %>
+
+<% veggies.each do |value| %>
+
 <p><input type="checkbox" value="<%=value%>"name="confirmed_options + <%=counter.to_s%>"> <%= value %>  </p>
 <%counter += 1%>
 <% end %>

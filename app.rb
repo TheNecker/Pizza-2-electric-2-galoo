@@ -6,13 +6,15 @@ get '/' do
 end 
 
 post '/components' do 
-	session[:options] = params[:choices]
+	crust = params[:cchoices]	
+	cheese = params[:chchoices]
+	meats = params[:mchoices]
+	veggies = params[:vchoices]
 	redirect '/confirm'
-	p "#{choices.join(",")}"
 end 
 
 get '/confirm' do 
-	erb :confirm, locals: {choices: session[:options]}
+	erb :confirm, locals: {cchoices: :crust, chchoices: :cheese, mchoices: :meats, vchoices: :veggies}
 end 
 
 post '/confirm' do 
