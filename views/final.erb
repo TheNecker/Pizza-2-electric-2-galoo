@@ -1,6 +1,54 @@
-ok! your order has been placed! you will have...
+<html>
+<center>
+<header>
+	<h1>ok! your order has been placed! you will have...</h1>
+</header>
+<link rel="stylesheet" href="../css/style.css"
+<body>
+<form method= "post" action = "/final">
 
-<% sauce_final.each do |sauce_value| %>
-    <p> <%= sauce_value.shift %> </p>
-    <img src = "./img/<%= sauce_value %>.png">
-<% end %>
+	
+	
+<p>
+<%size.each do |sivalue|%>
+<%=sivalue%>,
+<%end%>
+
+<%sauce.each do |svalue|%>
+<%=svalue%>,
+<%end%>
+
+<%crust.each do |cvalue|%>
+<%=cvalue%>,
+<%end%>
+
+<%cheese.each do |chvalue|%>
+<%=chvalue%>,
+<%end%>
+
+<%meats.each do |mvalue|%>
+<%=mvalue%>,
+<%end%>
+
+<%veggies.each do |vvalue|%>
+<%=vvalue%>,
+<%end%>
+
+<%carry.each do |cvalue|%>
+<%=cvalue%>,
+<%end%>
+
+<%address.each do |avalue|%>
+<%=avalue%>.
+<%end%></p>
+
+ it will come to you.... one day....</p>
+
+	
+	
+</form>
+
+
+</center>
+</body>
+</html>
