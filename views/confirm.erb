@@ -1,8 +1,9 @@
 <p>Ok, so, this is what you want your pizza to be aye?</p>
+<link rel="stylesheet" href="css/style.css">
 
 <form method = "post" action="/confirm">
 <% crust.each do |value| %>
-<p><input type="checkbox" value="<%=value%>" name="confirmed_options[]"> <%=value%>  </p>
+<p><input type="radio" value="<%=value%>" name="confirmed_options[]">yes<%=value%>  </p>
 <% end %>
 
 <% cheese.each do |value| %>
@@ -18,7 +19,11 @@
 <% end %>
 
 <% carry.each do |value| %>
-<p><input type="checkbox" value="<%=value%>" name="confirmed_options[]"> <%=value%>  </p>
+<p>Carry out:<input type="checkbox" value="<%=value%>" name="confirmed_options[]"> <%=value%> </p>  
+<% end %>
+
+<% address.each do |value| %>
+Address:<input type="checkbox" value="<%=value%>" name="confirmed_options[]"> <%=value%>
 <% end %>
 <input type="submit">
 </form>

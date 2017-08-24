@@ -1,6 +1,17 @@
 <h3><p>hello! and welcome to my my pizzaria! please go through the process to get a pizza!</p></h3>
-
+<link rel="stylesheet" href="css/style.css">
 <form method = "post" action="/components">
+<p> SIZE </p>
+	<input type="radio" name="size[]" value="small">Small<br>
+	<input type="radio" name="size[]" value="medium">Medium<br>
+	<input type="radio" name="size[]" value="large">Large<br>
+	<input type="radio" name="size[]" value="ex_large">Extra Large<br>
+<p> SAUCE </p>
+	<input type="radio" name="sauce[]" value="tomatoe_paste">Standard Sauce<br>
+	<input type="radio" name="sauce[]" value="alfrado">Alfrado<br>
+	<input type="radio" name="sauce[]" value="hummus">Hummus<br>
+	<input type="radio" name="sauce[]" value="pesto">Pesto<br>
+
 <p> CRUST </p>
 	<input type="radio" name="crust[]" value="thin_crust">Thin Crust<br>
 		<label for ="thin_crust"><img src="../img/thin.jpg" height="35px" width="35px"><br> 
@@ -87,6 +98,6 @@
 <p> CARRY OUT CHUMMER? </p>
 	<input type="radio" name="carry[]" value="yes">Yes<br>
 	<input type="radio" name="carry[]" value="no">no<br>
-	If yes, what is your address? <input type="text" name="carry[]" value=""><br>
+	If yes, what is your address? <input type="text" name="address[]" value=""><br>
 	<input type="submit">
 </form>
