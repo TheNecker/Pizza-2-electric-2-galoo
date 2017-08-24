@@ -1,5 +1,7 @@
-ok! your order has been placed!
-<link rel="stylesheet" href="css/style.css">
-<p><%finalchoices.each do |value|%></p>
-<%=value%>
-<%end%>
+ok! your order has been placed! you will have...
+
+
+<% sauce_final.each do |sauce_value| %>
+    <p> <%= sauce_value.shift %> </p>
+    <img src = "./img/<%= sauce_value %>.png">
+<% end %>
