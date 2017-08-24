@@ -17,5 +17,8 @@
 <p><input type="checkbox" value="<%=value%>" name="confirmed_options[]"> <%=value%>  </p>
 <% end %>
 
+<% carry.each do |value| %>
+<p><input type="checkbox" value="<%=value%>" name="confirmed_options[]"> <%=value%>  </p>
+<% end %>
 <input type="submit">
 </form>

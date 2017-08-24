@@ -10,15 +10,17 @@ post '/components' do
 	session[:chchoices] = params[:cheese]
 	session[:mchoices] = params[:meats]
 	session[:vchoices] = params[:veggies]
+	session[:carchoices] = params[:carry]
 	puts "MADE IT TO POST COMPONENTS #{session[:cchoices]}"
 	puts "MADE IT TO POST COMPONENTS #{session[:chchoices]}"
 	puts "MADE IT TO POST COMPONENTS #{session[:mchoices]}"
 	puts "MADE IT TO POST COMPONENTS #{session[:vchoices]}"
+	puts "MADE IT TO POST COMPONENTS #{session[:carchoices]}"
 	redirect '/confirm'
 end 
 
-get '/confirm' do 
-	erb :confirm, locals: {crust: session[:cchoices], cheese: session[:chchoices], meats: session[:mchoices], veggies: session[:vchoices]}
+get '/confirm' do 	
+	erb :confirm, locals: {crust: session[:cchoices], cheese: session[:chchoices], meats: session[:mchoices], veggies: session[:vchoices], carry: session[:carchoices]}
 end 
 
 post '/confirm' do 
