@@ -30,10 +30,17 @@ get '/confirm' do
 end 
 
 post '/confirm' do 
-	session[:confirmchoices] = params[:confirmed_options]
-	redirect '/finalresults'
+	session[:cchoices] = params[:crust]	
+	session[:chchoices] = params[:cheese]
+	session[:mchoices] = params[:meats]
+	session[:vchoices] = params[:veggies]
+	session[:carchoices] = params[:carry]
+	session[:achoices] = params[:address]
+	session[:schoices] = params[:sauce]
+	session[:sichoices] = params[:size]
+	redirect '/results'	
 end 
 
 get '/finalresults' do 
-	erb :final, locals: {finalchoices: session[:confirmchoices]}
+	erb :results, locals: {sauce_final: session[:sauce_choice], meat_final: session[:meat_choice], veg_final: session[:veg_choice]}
 end 

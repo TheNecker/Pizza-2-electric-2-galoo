@@ -1,13 +1,13 @@
 <p>Ok, so, this is what you want your pizza to be aye?</p>
 <link rel="stylesheet" href="css/style.css">
 <form method = "post" action="/confirm">
-<% size.each do |svalue| %>
+<% size.each do |sivalue| %>
 <p> <%= sivalue %>
 <input type = "radio" name = "sivalue<%= sivalue %>" value = "sivalue"> Yes
 <input type = "radio" name = "sivalue<%= sivalue %>" value = "sivalue"> No </p>
 <% end %>
 
-<% sauce.each do |cvalue| %>
+<% sauce.each do |svalue| %>
 <p> <%= svalue %>
 <input type = "radio" name = "svalue<%= svalue %>" value = "svalue"> Yes
 <input type = "radio" name = "svalue<%= svalue %>" value = "svalue"> No </p>
