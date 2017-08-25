@@ -7,46 +7,18 @@
 <body>
 <form method= "post" action = "/final">
 
-	
-	
-<p>
-<%size.each do |sivalue|%>
-<%=sivalue%>,
-<%end%>
-
-<%sauce.each do |svalue|%>
-<%=svalue%>,
-<%end%>
-
-<%crust.each do |cvalue|%>
-<%=cvalue%>,
-<%end%>
-
-<%cheese.each do |chvalue|%>
-<%=chvalue%>,
-<%end%>
-
-<%meats.each do |mvalue|%>
-<%=mvalue%>,
-<%end%>
-
-<%veggies.each do |vvalue|%>
-<%=vvalue%>,
-<%end%>
-
-<%carry.each do |cvalue|%>
-<%=cvalue%>,
-<%end%>
-
-<%address.each do |avalue|%>
-<%=avalue%>.
+<p><%confirmed.each do |value, key|%>
+<% if key == value %>
+<%=value%><img src="./img/<%=value%>.jpg" width="35px" height="35px">
 <%end%></p>
+<%end%>
 
  it will come to you.... one day....</p>
 
 	
 	
 </form>
+
 
 
 </center>

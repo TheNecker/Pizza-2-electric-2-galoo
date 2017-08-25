@@ -26,7 +26,7 @@ post '/components' do
 end 
 
 get '/confirm' do 	
-	erb :confirm, locals: {crust: session[:cchoices], cheese: session[:chchoices], meats: session[:mchoices], veggies: session[:vchoices], carry: session[:carchoices], address: session[:achoices], size: session[:sichoices], sauce: session[:schoices]}
+	erb :confirm, locals: {crust: session[:cchoices], cheese: session[:chchoices], meats: session[:mchoices], veggies: session[:vchoices], address: session[:achoices], size: session[:sichoices], sauce: session[:schoices]}
 end 
 
 post '/confirm' do 
@@ -35,5 +35,5 @@ post '/confirm' do
 end 
 
 get '/final' do 
-	erb :final, locals: {crust: session[:cchoices], cheese: session[:chchoices], meats: session[:mchoices], veggies: session[:vchoices], carry: session[:carchoices], address: session[:achoices], size: session[:sichoices], sauce: session[:schoices]}
+	erb :final, locals: {confirmed: session[:confirmed],crust: session[:cchoices], cheese: session[:chchoices], meats: session[:mchoices], veggies: session[:vchoices], address: session[:achoices], size: session[:sichoices], sauce: session[:schoices]}
 end 
