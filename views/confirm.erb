@@ -14,25 +14,26 @@
 <% end %>
 
 <% crust.each do |cvalue| %>
-<p> <%= cvalue %> <img src = "../img/<%= cvalue %>.jpg" height="35px" width="35px">
+<p> <%= cvalue %> <img src = "/img/<%= cvalue %>.jpg" height="35px" width="35px">
 <input type = "radio" name = "cvalue<%= cvalue %>" value = "cvalue"> Yes
 <input type = "radio" name = "cvalue<%= cvalue %>" value = "cvalue"> No </p>
 <% end %>
 
 <% cheese.each do |chvalue| %>
-<p> <%= chvalue %> <img src = "../img/<%= chvalue %>.jpg" height="35px" width="35px">
+<p> <%= chvalue %> 
+<img src = "/img/<%= chvalue %>.jpg" height="35px" width="35px">
 <input type = "radio" name = "chvalue<%= chvalue %>" value = "chvalue"> Yes
 <input type = "radio" name = "chvalue<%= chvalue %>" value = "chvalue"> No </p>
 <% end %>
 
 <% meats.each do  |mvalue| %>
-<p> <%= mvalue %> <img src = "../img/<%= mvalue %>.jpg" height="35px" width="35px">
+<p> <%= mvalue %> <img src = "/img/<%= mvalue %>.jpg" height="35px" width="35px">
 <input type = "radio" name = "mvalue<%= mvalue %>" value = "mvalue"> Yes
 <input type = "radio" name = "mvalue<%= mvalue %>" value = "mvalue"> No </p>
 <% end %>
 
 <% veggies.each do |vvalue| %>
-<p> <%= vvalue %> <img src = "../img/<%= vvalue %>.jpg" height="35px" width="35px">
+<p> <%= vvalue %> <img src = "/img/<%= vvalue %>.jpg" height="35px" width="35px">
 <input type = "radio" name = "vvalue<%= vvalue %>" value = "vvalue"> Yes
 <input type = "radio" name = "vvalue<%= vvalue %>" value = "vvalue"> No </p>
 <% end %>
