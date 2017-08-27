@@ -1,100 +1,104 @@
 <h3><p>hello! and welcome to my my pizzaria! please go through the process to get a pizza!</p></h3>
 <link rel="stylesheet" href="css/style.css">
-<form method = "post" action="/components">
+<form method = "post" action="/components" id="prices" onsubmit "return false;">
 <p> SIZE </p>
-	<input type="radio" name="size[]" value="small">Small<br>
-	<input type="radio" name="size[]" value="medium">Medium<br>
-	<input type="radio" name="size[]" value="large">Large<br>
-	<input type="radio" name="size[]" value="ex_large">Extra Large<br>
+	<input type="radio" name="size[]" value="small" onclick="calculateTotal()">Small ($2.00)<br>
+	<input type="radio" name="size[]" value="medium" onclick="calculateTotal()">Medium ($3.00)<br>
+	<input type="radio" name="size[]" value="large" onclick="calculateTotal()">Large ($4.00)<br>
+	<input type="radio" name="size[]" value="ex_large" onclick="calculateTotal()">Extra Large($5.00)<br>
 <p> SAUCE </p>
-	<input type="radio" name="sauce[]" value="tomatoe_paste">Standard Sauce<br>
-	<input type="radio" name="sauce[]" value="alfrado">Alfrado<br>
-	<input type="radio" name="sauce[]" value="hummus">Hummus<br>
-	<input type="radio" name="sauce[]" value="pesto">Pesto<br>
+	<input type="radio" name="sauce[]" value="tomatoe_paste" onclick="calculateTotal()">Standard Sauce ($1.00)<br>
+	<input type="radio" name="sauce[]" value="alfrado" onclick="calculateTotal()">Alfrado ($1.00)<br>
+	<input type="radio" name="sauce[]" value="hummus" onclick="calculateTotal()">Hummus ($1.00)<br>
+	<input type="radio" name="sauce[]" value="pesto" onclick="calculateTotal()">Pesto ($1.00)<br>
 
 <p> CRUST </p>
-	<p><input type="radio" name="crust[]" value="thin_crust">Thin Crust<br>
+	<p><input type="radio" name="crust[]" value="thin_crust" onclick="calculateTotal()">Thin Crust ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/thin_crust.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="crust[]" value="flatbread_crust">Flatbread Crust<br>
+	<input type="radio" name="crust[]" value="flatbread_crust" onclick="calculateTotal()">Flatbread Crust ($1.00)<br>
 		<label for ="flatbread_crust"><img src="../img/flatbread_crust.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="crust[]" value="thicc_crust">Thick Crust<br>
+	<input type="radio" name="crust[]" value="thicc_crust" onclick="calculateTotal()">Thick Crust ($1.00)<br>
 		<label for ="thicc_crust"><img src="../img/thick_crust.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="crust[]" value="focaccia">Focaccia<br>
+	<input type="radio" name="crust[]" value="focaccia" onclick="calculateTotal()">Focaccia ($1.00)<br>
 		<label for ="focaccia"><img src="../img/focaccia.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="crust[]" value="pan">Pan<br>
+	<input type="radio" name="crust[]" value="pan" onclick="calculateTotal()">Pan ($1.00)<br>
 		<label for ="pan"><img src="../img/pan.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="crust[]" value="deep_dish">Deep Dish<br>
+	<input type="radio" name="crust[]" value="deep_dish" onclick="calculateTotal()">Deep Dish ($1.00)<br>
 		<label for ="deep_dish"><img src="../img/deep_dish.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="crust[]" value="new_york_style">New York Style<br>
+	<input type="radio" name="crust[]" value="new_york_style" onclick="calculateTotal()">New York Style ($1.00)<br>
 		<label for ="new_york_style"><img src="../img/new_york_style.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="crust[]" value="st_louis">St Louis<br>
+	<input type="radio" name="crust[]" value="st_louis" onclick="calculateTotal()">St Louis ($1.00)<br>
 		<label for ="st_louis"><img src="../img/st_louis.jpg" height="35px" width="35px"><br></p>
 <p> CHEESE </p>
-	<p><input type="radio" name="cheese[]" value="chedder">Chedder<br>
+	<p><input type="radio" name="cheese[]" value="chedder" onclick="calculateTotal()">Chedder ($1.00)<br>
 		<label for ="chedder"><img src="../img/chedder.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="cheese[]" value="swiss">Swiss<br>
+	<input type="radio" name="cheese[]" value="swiss" onclick="calculateTotal()">Swiss ($1.00)<br>
 		<label for ="swiss"><img src="../img/swiss.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="cheese[]" value="mozerella">Mozerella<br>
+	<input type="radio" name="cheese[]" value="mozerella" onclick="calculateTotal()">Mozerella ($1.00)<br>
 		<label for ="mozerella"><img src="../img/mozerella.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="cheese[]" value="munster">Munster<br>
+	<input type="radio" name="cheese[]" value="munster" onclick="calculateTotal()">Munster ($1.00)<br>
 		<label for ="munster"><img src="../img/munster.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="cheese[]" value="roquefort">Roquefort<br>
+	<input type="radio" name="cheese[]" value="roquefort" onclick="calculateTotal()">Roquefort ($1.00)<br>
 		<label for ="roquefort"><img src="../img/roquefort.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="cheese[]" value="feta">Feta<br>
+	<input type="radio" name="cheese[]" value="feta" onclick="calculateTotal()">Feta ($1.00)<br>
 		<label for ="feta"><img src="../img/feta.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="cheese[]" value="gouda">Gouda<br>
+	<input type="radio" name="cheese[]" value="gouda" onclick="calculateTotal()">Gouda ($1.00)<br>
 		<label for ="gouda"><img src="../img/gouda.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="cheese[]" value="taleggio">Taleggio<br>
-		<label for ="taleggio"><img src="../img/taleggio.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="cheese[]" value="manchego">Manchego<br>
+	<input type="radio" name="cheese[]" value="taleggio" onclick="calculateTotal()">Taleggio ($1.00)<br>
+		<label for ="taleggio"><img src="../img/taleggio.jpg" height="35px" width="35px"><br>
+	<input type="radio" name="cheese[]" value="manchego" onclick="calculateTotal()">Manchego ($1.00)<br>
 		<label for ="manchego"><img src="../img/manchego.jpg" height="35px" width="35px"><br> 
-	<input type="radio" name="cheese[]" value="monterey_jack">Monterey_Jack<br>
+	<input type="radio" name="cheese[]" value="monterey_jack" onclick="calculateTotal()">Monterey_Jack ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/monterey_jack.jpg" height="35px" width="35px"><br></p>
 <p> MEATS </p>
-	<p><input type="checkbox" name="meats[]" value="sausage">Sausage<br>
+	<p><input type="checkbox" name="meats[]" value="sausage" onclick="calculateTotal()">Sausage ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/sausage.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="meats[]" value="ham">Ham<br>
+	<input type="checkbox" name="meats[]" value="ham" onclick="calculateTotal()">Ham ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/ham.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="meats[]" value="pepperoni">Pepperoni<br>
+	<input type="checkbox" name="meats[]" value="pepperoni" onclick="calculateTotal()">Pepperoni ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/pepperoni.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="meats[]" value="chicken">Chicken<br>
+	<input type="checkbox" name="meats[]" value="chicken" onclick="calculateTotal()">Chicken ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/chicken.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="meats[]" value="bacon">Bacon<br>
+	<input type="checkbox" name="meats[]" value="bacon" onclick="calculateTotal()">Bacon ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/bacon.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="meats[]" value="pork">Pork<br>
+	<input type="checkbox" name="meats[]" value="pork" onclick="calculateTotal()">Pork ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/pork.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="meats[]" value="salami">Salami<br>
+	<input type="checkbox" name="meats[]" value="salami" onclick="calculateTotal()">Salami ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/salami.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="meats[]" value="beef">Beef<br>
+	<input type="checkbox" name="meats[]" value="beef" onclick="calculateTotal()">Beef ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/beef.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="meats[]" value="cannadian_bacon">Cannadian Bacon<br>
+	<input type="checkbox" name="meats[]" value="cannadian_bacon" onclick="calculateTotal()">Cannadian Bacon ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/cannadian_bacon.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="meats[]" value="Meat_Lovers">All<br><p>
+	<input type="checkbox" name="meats[]" value="Meat_Lovers" onclick="calculateTotal()">All ($9.00)<br><p>
 <p> VEGGIES </p>
-	<p><input type="checkbox" name="veggies[]" value="jalapeno">Jalapeno<br>
+	<p><input type="checkbox" name="veggies[]" value="jalapeno" onclick="calculateTotal()">Jalapeno ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/jalapeno.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="veggies[]" value="spinach">Spinach<br>
+	<input type="checkbox" name="veggies[]" value="spinach" onclick="calculateTotal()">Spinach ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/spinach.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="veggies[]" value="mushrooms">Mushrooms<br>
+	<input type="checkbox" name="veggies[]" value="mushrooms" onclick="calculateTotal()">Mushrooms ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/mushrooms.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="veggies[]" value="tomatoes">Tomatoes<br>
+	<input type="checkbox" name="veggies[]" value="tomatoes" onclick="calculateTotal()">Tomatoes ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/tomatoes.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="veggies[]" value="corn">Corn<br>
+	<input type="checkbox" name="veggies[]" value="corn" onclick="calculateTotal()">Corn ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/corn.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="veggies[]" value="pickles">Pickles<br>
+	<input type="checkbox" name="veggies[]" value="pickles" onclick="calculateTotal()">Pickles ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/pickles.jpg." height="35px" width="35px"><br> 
-	<input type="checkbox" name="veggies[]" value="lettuce">Lettuce<br>
+	<input type="checkbox" name="veggies[]" value="lettuce" onclick="calculateTotal()">Lettuce ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/lettuce.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="veggies[]" value="pea">Pea<br>
+	<input type="checkbox" name="veggies[]" value="pea" onclick="calculateTotal()">Pea ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/pea.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="veggies[]" value="pepper">Pepper<br>
+	<input type="checkbox" name="veggies[]" value="pepper" onclick="calculateTotal()">Pepper ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/pepper.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="veggies[]" value="eggplant">Eggplant<br>
+	<input type="checkbox" name="veggies[]" value="eggplant" onclick="calculateTotal()">Eggplant ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/eggplant.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="veggies[]" value="avacado">Avacado<br>
+	<input type="checkbox" name="veggies[]" value="avacado" onclick="calculateTotal()">Avacado ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/avacado.jpg" height="35px" width="35px"><br> 
-	<input type="checkbox" name="veggies[]" value="broccoli">Broccoli<br>
+	<input type="checkbox" name="veggies[]" value="broccoli" onclick="calculateTotal()">Broccoli ($1.00)<br>
 		<label for ="thin_crust"><img src="../img/broccoli.jpg" height="35px" width="35px"><br></p>
+	<label>
+		<br> Total
+		<input value="$0.00" readonly type="text" id="total" />
+	</label>
 <p> DELIVERY CHUMMER? </p>
 	If yes, what is your address? <input type="text" name="address[]" value=""><br>
 	<input type="submit">

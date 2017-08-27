@@ -1,0 +1,32 @@
+window.totalIt = function() {
+  var input = document.getElementsByName("product");
+  var total = 0;
+    var count = 0;
+  for (var i = 0; i < input.length; i++) {
+    if (input[i].checked) {
+      count += 1;
+    }   
+  }   
+  if(count >= 3){ 
+    total = count * 29; 
+  } else {
+    total = count * 39; 
+  }   
+  return total;
+}   
+
+window.totalPrisDessert = function() {
+  var input = document.getElementsByName("dessert");
+  var total = 0;
+  for (var i = 0; i < input.length; i++) {
+    if (input[i].checked) {
+      total += parseFloat(input[i].value);
+    }   
+  }   
+  return total;
+}   
+
+window.grandTotal = function() {
+  var total = totalIt() + totalPrisDessert();
+  document.getElementById("total").value = "$" + total.toFixed(2);
+}
