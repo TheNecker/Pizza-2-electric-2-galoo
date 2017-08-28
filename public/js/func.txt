@@ -15,7 +15,7 @@ window.totalIt = function() {
   return total;
 }   
 
-window.totalPrisDessert = function() {
+window.prices = function() {
   var input = document.getElementsByName("dessert");
   var total = 0;
   for (var i = 0; i < input.length; i++) {

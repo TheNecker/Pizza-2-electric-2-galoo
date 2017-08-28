@@ -1,10 +1,23 @@
 <p>Ok, so, this is what you want your pizza to be aye?</p>
 <link rel="stylesheet" href="css/style.css">
 <form method = "post" action="/confirm">
+<%total = 0%>
+
 <% size.each do |sivalue| %>
 <p> <%= sivalue %> 
-<input type = "radio" name = "confirmed[<%= sivalue %>]" value = "<%=sivalue%>"> Yes
-<input type = "radio" name = "confirmed[<%= sivalue %>]" value = "no"> No </p>
+<input type = "radio" name = "confirmed[<%= sivalue %>]" id = "<%=sivalue%>"> Yes
+<input type = "radio" name = "confirmed[<%= sivalue %>]" id = "no"> No </p>
+<%if sivalue == "small"%>
+        <%total += 2%>
+    <%elsif sivalue == "medium"%>
+        <% total += 3%>
+    <%elsif sivalue == "large"%>
+        <%total += 5%>
+    <%elsif sivalue == "ex_large"%>
+        <%total += 7%>
+    <%else%>
+        <% total += 8%>
+    <%end%>
 <% end %>
 
 <% sauce.each do |svalue| %>
@@ -17,6 +30,7 @@
 <p> <%= cvalue %> <img src = "/img/<%= cvalue %>.jpg" height="35px" width="35px">
 <input type = "radio" name = "confirmed[<%= cvalue %>]" value = "<%=cvalue%>"> Yes
 <input type = "radio" name = "confirmed[<%= cvalue %>]" value = "no"> No </p>
+<%total += 1%>
 <% end %>
 
 <% cheese.each do |chvalue| %>
@@ -24,18 +38,21 @@
 <img src = "/img/<%= chvalue %>.jpg" height="35px" width="35px">
 <input type = "radio" name = "confirmed[<%= chvalue %>]" value = "<%=chvalue%>"> Yes
 <input type = "radio" name = "confirmed[<%= chvalue %>]" value = "no"> No </p>
+<%total += 1%>
 <% end %>
 
 <% meats.each do  |mvalue| %>
 <p> <%= mvalue %> <img src = "/img/<%= mvalue %>.jpg" height="35px" width="35px">
 <input type = "radio" name = "confirmed[<%= mvalue %>]" value = "<%=mvalue%>"> Yes
 <input type = "radio" name = "confirmed[<%= mvalue %>]" value = "no"> No </p>
+<%total += 1%>
 <% end %>
 
 <% veggies.each do |vvalue| %>
 <p> <%= vvalue %> <img src = "/img/<%= vvalue %>.jpg" height="35px" width="35px">
 <input type = "radio" name = "confirmed[<%= vvalue %>]" value = "<%=vvalue%>"> Yes
 <input type = "radio" name = "confirmed[<%= vvalue %>]" value = "no"> No </p>
+<%total += 1%>
 <% end %>
 
 <% address.each do |avalue| %>
@@ -44,5 +61,6 @@ Address:
 <input type = "radio" name = "confirmed[<%= avalue %>]" value = "<%=avalue%>"> Yes
 <input type = "radio" name = "confirmed[<%= avalue %>]" value = "no"> No </p>
 <% end %>
+So far your total is <%= total %> bucks, press submit to make any changes made.
 <input type="submit">
 </form>
