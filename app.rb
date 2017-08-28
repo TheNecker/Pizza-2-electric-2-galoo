@@ -31,9 +31,10 @@ end
 
 post '/confirm' do 
   session[:confirmed] = params[:confirmed]	
-	redirect '/final'	
+  session[:total] = params[:value]
+  redirect '/final'	
 end 
 
 get '/final' do 
-	erb :final, locals: {confirmed: session[:confirmed],crust: session[:cchoices], cheese: session[:chchoices], meats: session[:mchoices], veggies: session[:vchoices], address: session[:achoices], size: session[:sichoices], sauce: session[:schoices]}
+	erb :final, locals: {confirmed: session[:confirmed],crust: session[:cchoices], cheese: session[:chchoices], meats: session[:mchoices], veggies: session[:vchoices], address: session[:achoices], size: session[:sichoices], sauce: session[:schoices], value: session[:total]}
 end 
